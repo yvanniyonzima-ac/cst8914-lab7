@@ -193,48 +193,49 @@ article p {
   float: right;
 }
 
+li {
+  display: inline;
+}
+
   </style>
 </head>
 
 <body>
-  <header>
+  <header> <!-- header content start -->
 
     <div class="container">
       <h1 class="logo">The Funion</h1>
       
       <!-- Maybe this could be improved with aria-activedescendant later? -->
       <nav class="menu">
-        <a href="#">Home</a>
-        <a href="#">Politics</a>
-        <a href="#" tabindex="-1">Business</a>
-        <a href="#">Entertainment</a>
-        <a href="#">Sports</a>
-        <a href="#" class="btn-search pull-right"><img src="https://raw.githubusercontent.com/udacity/ud891/2de2a0688c68809a3b453db3a24b1a59e8401459/lesson2-focus/02-dom-order/images/search.svg" alt="Search" />Search</a> 
-
+        <ul> <!-- 1. Added ul tag to make the navigation items it a list -->
+          <li></li><a href="#">Home</a></li>
+          <li></li><a href="#">Politics</a></li>
+          <li></li><a href="#" tabindex="-1">Business</a></li>
+          <li></li><a href="#">Entertainment</a></li>
+          <li></li><a href="#">Sports</a></li>
+          <button href="#" class="btn-search pull-right"><img src="https://raw.githubusercontent.com/udacity/ud891/2de2a0688c68809a3b453db3a24b1a59e8401459/lesson2-focus/02-dom-order/images/search.svg" alt="Search" />Search</a> 
+        </ul>
       </nav>
     </div>
-  </header>
-  <div class="newsletter">
-    <div class="container">
-      <h3>Like the Funion? Consider joining our newsletter!</h3>
-      <input type="text">
-      <button type="button" onfocus="getFocus()">Sign up</button></div>
-      
-    </div>
+  </header>  <!-- header content end -->
+
   </div>
-  <main class="container">
-    <h2 class="offscreen">Top story</h2>
-    <article class="main-story">
-      <img class="pull-right" src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/cat.jpg?raw=true" alt="A cat staring menacingly off into space">
-      <div class="info">
-        <h3 class="headline">Study shows 9 out of 10 cats quietly judging their owners as they sleep</h3>
-        <p>
-          GRAND RAPIDS, MILorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#">Read More</a>
-          
-        </p>
-      </div>
-    </article>
+  <main class="container"> <!-- main content start -->
+    <div class="tier-header">
+      <h2>Top story</h2> <!-- 2. Removed the off screen class attribute -->
+      <article class="main-story">
+        <img class="pull-right" src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/cat.jpg?raw=true" alt="A cat staring menacingly off into space">
+        <div class="info">
+          <h3 class="headline">Study shows 9 out of 10 cats quietly judging their owners as they sleep</h3>
+          <p>
+            GRAND RAPIDS, MILorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#">Read More</a>
+          </p>
+        </div>
+      </article>
+    </div>
+    
   
     <div class="side-by-side">
       <div class="column">
@@ -285,11 +286,18 @@ article p {
       </div>
     </div>
     
-  </main>
-  <!--   stuff can be added here :)
-  <footer>
-  </footer>
-  -->
+  </main> <!-- main content end -->
+ 
+  <!-- added a footer-->
+  <footer> <!-- footer content start -->
+    <div class="newsletter"> <!-- 3. Moved the content of this div to the footer. It was styled to be placed at the bottom-->
+      <div class="container">
+        <h3>Like the Funion? Consider joining our newsletter!</h3>
+        <input type="email" placeholder="Enter your email address" /> <!-- 4. chaged the input type to email and added a placeholder attribute -->
+        <button type="button" onclick="getFocus()">Sign up</button></div> <!-- 5. chaged the onfocus to onclick. -->
+        
+      </div>
+  </footer> <!-- footer content end -->
   
   <script>
     function getFocus() {
