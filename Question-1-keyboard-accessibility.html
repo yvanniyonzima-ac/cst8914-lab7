@@ -84,6 +84,10 @@ header {
   width: 22px;
   height: 22px;
 }
+.menu li {
+  display: inline;
+  margin-right: 20px;
+}
 
 article p {
   line-height: 1.4;
@@ -193,9 +197,7 @@ article p {
   float: right;
 }
 
-li {
-  display: inline;
-}
+
 
   </style>
 </head>
@@ -209,11 +211,11 @@ li {
       <!-- Maybe this could be improved with aria-activedescendant later? -->
       <nav class="menu">
         <ul> <!-- 1. Added ul tag to make the navigation items it a list -->
-          <li></li><a href="#">Home</a></li>
-          <li></li><a href="#">Politics</a></li>
-          <li></li><a href="#" tabindex="-1">Business</a></li>
-          <li></li><a href="#">Entertainment</a></li>
-          <li></li><a href="#">Sports</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Politics</a></li>
+          <li><a href="#">Business</a></li> <!-- 2. Removed tab index to keep tab order-->
+          <li><a href="#">Entertainment</a></li>
+          <li><a href="#">Sports</a></li>
           <button href="#" class="btn-search pull-right"><img src="https://raw.githubusercontent.com/udacity/ud891/2de2a0688c68809a3b453db3a24b1a59e8401459/lesson2-focus/02-dom-order/images/search.svg" alt="Search" />Search</a> 
         </ul>
       </nav>
@@ -223,7 +225,7 @@ li {
   </div>
   <main class="container"> <!-- main content start -->
     <div class="tier-header">
-      <h2>Top story</h2> <!-- 2. Removed the off screen class attribute -->
+      <h2>Top story</h2> <!-- 3. Removed the off screen class attribute -->
       <article class="main-story">
         <img class="pull-right" src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/cat.jpg?raw=true" alt="A cat staring menacingly off into space">
         <div class="info">
@@ -240,11 +242,11 @@ li {
     <div class="side-by-side">
       <div class="column">
         <div class="tier-header">
-          <h2 tabindex="0">In the news</h2>
+          <h2>In the news</h2><!-- 4. Removed tab index to keep tab order-->
         </div>
         <article>
           <h3 class="headline">Bee wonders if maybe everyone else is a drone and he's the only one who has it "figured out."</h3>
-          <p><a href="#" tabindex="1"><b>Read More</b></a></p>
+          <p><a href="#"><b>Read More</b></a></p> <!-- 5. Removed tab index to keep tab order-->
           <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/bee.jpg?raw=true" alt="A bee on top of a flower" />
         </article>
       </div>
@@ -290,11 +292,11 @@ li {
  
   <!-- added a footer-->
   <footer> <!-- footer content start -->
-    <div class="newsletter"> <!-- 3. Moved the content of this div to the footer. It was styled to be placed at the bottom-->
+    <div class="newsletter"> <!-- 6. Moved the content of this div to the footer. It was styled to be placed at the bottom-->
       <div class="container">
         <h3>Like the Funion? Consider joining our newsletter!</h3>
-        <input type="email" placeholder="Enter your email address" /> <!-- 4. chaged the input type to email and added a placeholder attribute -->
-        <button type="button" onclick="getFocus()">Sign up</button></div> <!-- 5. chaged the onfocus to onclick. -->
+        <input type="email" placeholder="joe@example.com" /> <!-- 7. chaged the input type to email and added a placeholder attribute -->
+        <button type="button" onclick="getFocus()">Sign up</button></div> <!-- 8. chaged the onfocus to onclick. -->
         
       </div>
   </footer> <!-- footer content end -->
